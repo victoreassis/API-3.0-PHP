@@ -25,7 +25,6 @@ abstract class AbstractRequest
     public function __construct(Merchant $merchant, LoggerInterface $logger = null)
     {
         $this->merchant = $merchant;
-        $this->logger = $logger;
     }
 
     /**
