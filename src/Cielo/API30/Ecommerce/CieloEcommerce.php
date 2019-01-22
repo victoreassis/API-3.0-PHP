@@ -247,4 +247,20 @@ class CieloEcommerce
 
         return $changeAmountRecurrentPaymentRequest->execute($recurrentPaymentId);
     }
+
+    /**
+     * Change the Payment data of a RecurrentPayment on Cielo
+     *
+     * @param $recurrentPaymentId
+     * @param array $data
+     * @return mixed
+     */
+    public function changePaymentRecurrentPayment($recurrentPaymentId, $data)
+    {
+        $changePaymentRecurrentPaymentRequest = new UpdateRecurrentPaymentRequest('Payment', $this->merchant, $this->environment);
+
+        $changePaymentRecurrentPaymentRequest->setContent($data);
+
+        return $changePaymentRecurrentPaymentRequest->execute($recurrentPaymentId);
+    }
 }
