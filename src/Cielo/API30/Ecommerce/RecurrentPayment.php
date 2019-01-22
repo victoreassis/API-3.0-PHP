@@ -116,6 +116,14 @@ class RecurrentPayment implements \JsonSerializable
     /**
      * @return mixed
      */
+    public function getRecurrentTransactions()
+    {
+        return $this->recurrentTransactions;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getReasonCode()
     {
         return $this->reasonCode;
@@ -191,6 +199,17 @@ class RecurrentPayment implements \JsonSerializable
     public function getRecurrencyDay()
     {
         return $this->recurrencyDay;
+    }
+
+    /**
+     * @param $day
+     *
+     * @return $this
+     */
+    public function setRecurrencyDay($day)
+    {
+        $this->recurrencyDay = $day;
+        return $this;
     }
 
     /**
